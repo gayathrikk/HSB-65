@@ -80,7 +80,7 @@ public class imageloading {
 	     Thread.sleep(3000);
 	     driver.findElement(By.xpath("(//span[text()='1069'])[1]")).click();
 	}
-	@Test(priority=3)
+	@Test(priority=3,enabled=false)
 	public void imagelaodingatlas() throws InterruptedException
 	{
 		driver.findElement(By.xpath("//a[@title='View High Resolution Image']")).click();
@@ -104,10 +104,11 @@ public class imageloading {
 		WebElement file2=driver.findElement(By.xpath("(//div[@class='paragraph'])[6] "));
 		String filenameatlas=file2.getText();
 		System.out.println("filename atlas-"+filenameatlas);
-		Assert.assertNotEquals(filenamehd, filenameatlas);
+        Assert.assertNotEquals(filenamehd, filenameatlas, "Different brain sections are loaded");
+        System.out.println("Same brain sections are loaded");
 		
 		}
-	@Test(priority=4,enabled=false)
+	@Test(priority=4)
 	public void imagelaodingcell() throws InterruptedException
 	{
 		driver.findElement(By.xpath("//a[@title='View High Resolution Image']")).click();
@@ -129,7 +130,8 @@ public class imageloading {
 		WebElement file2=driver.findElement(By.xpath("(//div[@class='paragraph'])[4] "));
 		String filenamecell=file2.getText();
 		System.out.println("filename cellannotation-"+filenamecell);
-		Assert.assertNotEquals(filenamehd, filenamecell);
+        Assert.assertNotEquals(filenamehd, filenamecell, "Different brain sections are loaded");
+        System.out.println("Same brain sections are loaded");
 		
 		
 	}
