@@ -80,7 +80,7 @@ public class imageloading {
 	     Thread.sleep(3000);
 	     driver.findElement(By.xpath("(//span[text()='1069'])[1]")).click();
 	}
-	@Test(priority=3,enabled=false)
+	@Test(priority=3)
 	public void imagelaodingatlas() throws InterruptedException
 	{
 		driver.findElement(By.xpath("//a[@title='View High Resolution Image']")).click();
@@ -105,7 +105,7 @@ public class imageloading {
 		Assert.assertNotEquals(filenamehd, filenameatlas);
 		
 		}
-	@Test(priority=4)
+	@Test(priority=4,enabled=false)
 	public void imagelaodingcell() throws InterruptedException
 	{
 		driver.findElement(By.xpath("//a[@title='View High Resolution Image']")).click();
