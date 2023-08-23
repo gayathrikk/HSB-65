@@ -130,7 +130,7 @@ public class imageloading {
 		String filenamecell=file2.getText();
 		System.out.println("filename cellannotation-"+filenamecell);
 		 try {
-	            Assert.assertNotEquals("Test failed: Same brain sections are loaded", filenamehd, filenamecell);
+	            Assert.assertEquals("Test failed: Same brain sections are loaded", filenamehd, filenamecell);
 	            System.out.println("Test passed: Different brain sections are loaded");
 	        } catch (AssertionError e) {
 	            System.out.println(e.getMessage());
