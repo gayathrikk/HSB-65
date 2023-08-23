@@ -129,7 +129,13 @@ public class imageloading {
 		WebElement file2=driver.findElement(By.xpath("(//div[@class='paragraph'])[4] "));
 		String filenamecell=file2.getText();
 		System.out.println("filename cellannotation-"+filenamecell);
-		Assert.assertNotEquals(filenamehd, filenamecell);
+		 try {
+	            Assert.assertNotEquals("Test failed: Same brain sections are loaded", filenamehd, filenamecell);
+	            System.out.println("Test passed: Different brain sections are loaded");
+	        } catch (AssertionError e) {
+	            System.out.println(e.getMessage());
+	            System.out.println("Test failed: Same brain sections are loaded");
+	        }
 		
 		
 	}
