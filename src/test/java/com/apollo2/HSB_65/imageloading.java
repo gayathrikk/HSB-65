@@ -99,6 +99,8 @@ public class imageloading {
 	     actions.sendKeys(section, Keys.ENTER).perform();
 		driver.findElement(By.xpath("//a[@title='Atlas Editor']")).click();
 		Thread.sleep(5000);
+		driver.findElement(By.xpath("(//span[text()='Old Menu']//preceding::nb-icon)[3]")).click();
+		Thread.sleep(3000);
 		WebElement file2=driver.findElement(By.xpath("(//div[@class='paragraph'])[6] "));
 		String filenameatlas=file2.getText();
 		System.out.println("filename atlas-"+filenameatlas);
